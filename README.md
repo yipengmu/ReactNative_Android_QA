@@ -5,7 +5,7 @@
 
 * **1. app启动后，红色界面，unable load jsbundle ：**
 
-1. 解决办法：一般来说就是，你是用dev-serve方式，且你的server没有正确匹配上，如果是用手机跑的话，需要pc和手机在同一个wifi下，且通过menu键设置menu-ip为pc的ip，如果是模拟器，则不需要手动设置ip,设置的话，反倒会出错
+1. 解决办法：一般来说就是，你是用dev-serve方式，且你的server没有正确匹配上，如果是用手机跑的话，需要pc和手机在同一个wifi下，且通过menu键设置menu-ip为pc的ip，如果是模拟器，则不需要手动设置ip,设置的话，反倒会出错。如果使用Genymotion出现这种问题，要是设置serve为ip无效的话，可以尝试设置serve为localhost。
 
 * **2. app启动后，红色界面，unRegisteredProject**
 
