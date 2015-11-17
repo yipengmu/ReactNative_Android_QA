@@ -78,3 +78,11 @@ CustomMoudle.yourMethodDeclearInYourNative('someparms');`
 1. 由于JNI的通信限制，Java层和Native通信是单向的，且为了保证RN的16ms的渲染频率，所有Java-Native-jscore层的通信都是异步的,这样可能对于JAVA层的UI渲染是个性能问题。
 
 2. 当消息量非常大或ListView页面非常复杂时候，每1层Cell的渲染要以Css-ScrowllerView模型需要UI线程的连续绘制，对于瀑布流负责listview等可能会存在性能问题，但是该问题本身肯定是优于H5的体验的
+
+> 后面继续追加相关踩坑
+
+* **11.关于ReactInstanceManager 的创建及赋值**
+* 
+1.关于ReactInstanceManager的创建默认是使用，他的builder来创建，但是穿件后对象本身没有主要get接口的暴漏,我们暂且本次render一个view时都重新用builder创建一个实例
+2.此时问题来了，发现同一个context给ReactInstanceManager 设置的jsBunldeFile只有第一个才生效
+
