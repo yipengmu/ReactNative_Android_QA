@@ -83,6 +83,12 @@ CustomMoudle.yourMethodDeclearInYourNative('someparms');`
 
 * **11.关于ReactInstanceManager 的创建及赋值**
 * 
+
 1.关于ReactInstanceManager的创建默认是使用，他的builder来创建，但是穿件后对象本身没有主要get接口的暴漏,我们暂且本次render一个view时都重新用builder创建一个实例
-2.此时问题来了，发现同一个context给ReactInstanceManager 设置的jsBunldeFile只有第一个才生效
+
+2.此时问题来了，发现同一个context给ReactInstanceManager 设置的jsBunldeFile只有第一个才生效(后来发现，这个貌似是个bug，偶现的会加载不到，不是必先)
+
+3.目前的方案，是在重建ReactRootView,使用一份新的ReactInstanceManager实例，不会出现上面的情况。但是这样的话，在内存占用上可能会有问题
+
+4.多个ReactInstanceManager实例的创建方案，根本问题还是上面第一条那个builder的功能分离，不过这样也有单独实例的好处，这样能够保证在每个view的句柄是想回隔离和独立的。
 
