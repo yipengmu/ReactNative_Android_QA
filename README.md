@@ -90,16 +90,16 @@ CustomMoudle.yourMethodDeclearInYourNative('someparms');`
 
 * **12.ReactInstanceManager 多实例的问题**
 
-1.目前的方案，是在重建ReactRootView,使用一份新的ReactInstanceManager实例，不会出现上面的情况。但是这样的话，在内存占用上可能会有问题
+1. 目前的方案，是在重建ReactRootView,使用一份新的ReactInstanceManager实例，不会出现上面的情况。但是这样的话，在内存占用上可能会有问题
 
-2.多个ReactInstanceManager实例的创建方案，根本问题还是上面第一条那个builder的功能分离，不过这样也有单独实例的好处，这样能够保证在每个view的句柄是想回隔离和独立的。
+2. 多个ReactInstanceManager实例的创建方案，根本问题还是上面第一条那个builder的功能分离，不过这样也有单独实例的好处，这样能够保证在每个view的句柄是想回隔离和独立的。
 
-3.但是如果使用了多个ReactInstanceManager实例，对于back事件等其他action回调会存在问题，待解决
+3. 但是如果使用了多个ReactInstanceManager实例，对于back事件等其他action回调会存在问题，待解决
 
 
 * **13.关于so包，太大的问题，可以对so进行裁剪**
-	* so 打包裁剪方案，只保留armabi so包，部分so包通过v7进行hook，对v7、x86等高级cpu架构进行降级，整体so包比默认React包减小60%，保证包大小质量
-	*业务方可以动态注入业务PackageManager功能，核心模块被聚合在core中
+1. so 打包裁剪方案，只保留armabi so包，部分so包通过v7进行hook，对v7、x86等高级cpu架构进行降级，整体so包比默认React包减小60%，保证包大小质量
+2. 业务方可以动态注入业务PackageManager功能，核心模块被聚合在core中
 
 * **14.如何支持 remoteUrl 方式**
-配合FaceBook原生的LocalFile加载方式，提供一组download模块，实现业务使用者，只需要传入RemoteUlr，整个React Native 容器依然可以直接获得一个渲染完成的ReactView实例的业务场景
+1. 配合FaceBook原生的LocalFile加载方式，提供一组download模块，实现业务使用者，只需要传入RemoteUlr，整个React Native 容器依然可以直接获得一个渲染完成的ReactView实例的业务场景
