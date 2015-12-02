@@ -105,6 +105,7 @@ CustomMoudle.yourMethodDeclearInYourNative('someparms');`
 1. 配合FaceBook原生的LocalFile加载方式，提供一组download模块，实现业务使用者，只需要传入RemoteUlr，整个React Native 容器依然可以直接获得一个渲染完成的ReactView实例的业务场景
 
 * **15.项目的minsdk 低于16，而react android 默认的minsdk是16**
+
 1. 解决办法：在manifest中配合overrideLibrary标签
 ```
     <uses-sdk
