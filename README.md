@@ -112,4 +112,4 @@ CustomMoudle.yourMethodDeclearInYourNative('someparms');`
         android:targetSdkVersion="23" />
 ```
 1. 解决办法：在manifest中配合overrideLibrary标签
-2. 如果有多次集成关系，需要在每一个层级节点去overrideLibrary 直接的依赖package包名声明。
+2. 如果有多次继承依赖关系，需要在每一个层级节点去overrideLibrary 直接的依赖package包名声明。
