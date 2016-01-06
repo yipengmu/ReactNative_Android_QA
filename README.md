@@ -115,6 +115,7 @@ CustomMoudle.yourMethodDeclearInYourNative('someparms');`
 2. 如果有多次继承依赖关系，需要在每一个层级节点的manifest中去overrideLibrary 直接的依赖package包名声明。
 
 * **16.ImageView 的采坑及代码分析**
+
 1. 新的Android studio 现在新建的文件夹都是mipmap-xxdpi 而不是以前的drawable-xxdpi,自己也没有注意。
 2. Android版的reactNative中使用了如下的代码，里面hardcode了 drawable 的type,所以只会去R.java中找资源id
 `return context.getResources().getIdentifier(
