@@ -113,3 +113,15 @@ CustomMoudle.yourMethodDeclearInYourNative('someparms');`
 ```
 1. 解决办法：在manifest中配合overrideLibrary标签
 2. 如果有多次继承依赖关系，需要在每一个层级节点的manifest中去overrideLibrary 直接的依赖package包名声明。
+
+* **16.ImageView 的采坑及代码分析**
+1. 新的Android studio 现在新建的文件夹都是mipmap-xxdpi 而不是以前的drawable-xxdpi,自己也没有注意。
+2. Android版的reactNative中使用了如下的代码，里面hardcode了 drawable 的type,所以只会去R.java中找资源id
+`return context.getResources().getIdentifier(
+name.toLowerCase().replace("-", "_"),
+"drawable",
+context.getPackageName())`
+3. 于是就出现了，如果想直接使用imageIdName去加载图片，图片uriSource部分会解析失败
+4. 为什么用了 mipmap代替 drawable ，具体的原因可以参考[这里](http://segmentfault.com/q/1010000002603418)
+5. 详细文章介绍可参见 [lession10](https://github.com/yipengmu/react-native-android-lession/blob/master/lession10.ImageView%20%E4%BD%BF%E7%94%A8%E9%87%87%E5%9D%91.md)
+
