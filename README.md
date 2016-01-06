@@ -1,6 +1,6 @@
 # ReactNative_Android_QA
 
-##Android端10个最常见问题
+##Android端10个最常见采坑问题（持续更新中。。）
 这里逐条记录下最容易遇到的React native android 相关case：
 
 * **1. app启动后，红色界面，unable load jsbundle ：**
