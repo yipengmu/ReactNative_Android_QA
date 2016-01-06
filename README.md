@@ -117,6 +117,7 @@ CustomMoudle.yourMethodDeclearInYourNative('someparms');`
 ## **16.ImageView 的采坑及代码分析**
 
 ![tp](https://camo.githubusercontent.com/d57e45d3fc6a3e8f3d715759c70a81c42fc20727/687474703a2f2f73312e73696e61696d672e636e2f6d773639302f3030317148394258677936596d6f5a75746671393026363930)
+
 1. 新的Android studio 现在新建的文件夹都是mipmap-xxdpi 而不是以前的drawable-xxdpi,自己也没有注意。
 2. Android版的reactNative中使用了如下的代码，里面hardcode了 drawable 的type,所以只会去R.java中找资源id
 `return context.getResources().getIdentifier(
