@@ -128,3 +128,5 @@ context.getPackageName())`
 4. 为什么用了 mipmap代替 drawable ，具体的原因可以参考[这里](http://segmentfault.com/q/1010000002603418)
 5. 详细文章介绍可参见 [lession10](https://github.com/yipengmu/react-native-android-lession/blob/master/lession10.ImageView%20%E4%BD%BF%E7%94%A8%E9%87%87%E5%9D%91.md)
 
+## **17. Ui 绘制时，出现兼容性 打底color行为不一致问题**
+一样的代码，发现存在偶现的打底<Text>标签的color没有生效的问题。通常默认会是灰色文字，但是有时候会偶现的白色文字，在背景是白色的情况下，就看不到内容了，这时需要手动给Text有份打底颜色，即可解决
